@@ -8,10 +8,3 @@
     <target>lightning__HomePage</target>
   </targets>
 </LightningComponentBundle>
-
-<!--para deplou via comando -->
-<!--sfdx force:source:deploy -p force-app/main/default/lwc/helloWorld -->
-<!--criação de componente LWC via terminal --> 
-<!--sfdx force:lightning:component:create  traco traco type lwc traco traco 
-componentname helloWorld traco traco outputdir force-app/main/default/lwc
--->
