@@ -34,7 +34,7 @@ public class EmailManager {
     }
 }
 /*
-//Se o metodo nao for statico só é possivel chamar por instancia 
+//Se o metodo nao for static só é possivel chamar por instancia 
 EmailManager em = new EmailManager();
 em.sendMail('allanfreiresa@gmail.com', 'Trailhead Tutorial', '123 body');
 

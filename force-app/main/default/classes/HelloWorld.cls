@@ -59,4 +59,5 @@ public with sharing class HelloWorld {
     }
 }
 
+//Chamar metodo
 //HelloWorld.printMessage();
