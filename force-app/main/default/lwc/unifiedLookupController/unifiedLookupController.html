@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Unified Lookup Search">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                label="Search"
+                value={searchTerm}
+                onchange={handleSearchChange}>
+            </lightning-input>
+            <template if:true={searchOptions}>
+                <ul>
+                    <template for:each={searchOptions} for:item="record">
+                        <li key={record.Id}>
+                            <button data-id={record.Id} data-type={record.ObjectType} onclick={handleRecordSelect}>
+                                {record.Name} ({record.ObjectType})
+                            </button>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            
+            <template if:true={selectedRecord}>
+                <h3>Selected Record Details</h3>
+                <p>Type: {selectedRecord.ObjectType}</p>
+                <p>Id: {selectedRecord.Id}</p>
+                <p>Name: {selectedRecord.Name}</p>
+                <template if:true={selectedRecord.Email}>
+                    <p>Email: {selectedRecord.Email}</p>
+                </template>
+                <template if:true={selectedRecord.Company}>
+                    <p>Company: {selectedRecord.Company}</p>
+                </template>
+                <template if:true={selectedRecord.AccountName}>
+                    <p>Account: {selectedRecord.AccountName}</p>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
