@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Account and Contact Lookup">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                label="Search Account"
+                value={accountSearchTerm}
+                onchange={handleAccountSearchChange}>
+            </lightning-input>
+            <template if:true={accountOptions}>
+                <ul>
+                    <template for:each={accountOptions} for:item="account">
+                        <li key={account.Id}>
+                            <button data-id={account.Id} onclick={handleAccountSelect}>{account.Name}</button>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <lightning-input
+                label="Search Contact"
+                value={contactSearchTerm}
+                onchange={handleContactSearchChange}
+                disabled={isContactSearchDisabled}>
+            </lightning-input>
+            <template if:true={contactOptions}>
+                <ul>
+                    <template for:each={contactOptions} for:item="contact">
+                        <li key={contact.Id}>
+                            <button data-id={contact.Id} onclick={handleContactSelect}>{contact.Name}</button>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>
