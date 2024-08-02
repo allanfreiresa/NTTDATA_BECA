@@ -1,5 +1,5 @@
 <template>
-    <lightning-card title="Account Lookup and Contacts">
+    <lightning-card title="Account and Contact Lookup">
         <div class="slds-p-around_medium">
             <lightning-input
                 label="Search Account"
@@ -15,6 +15,20 @@
                     </template>
                 </ul>
             </template>
+            <lightning-input
+                label="Search Contact"
+                value={contactSearchTerm}
+                onchange={handleContactSearchChange}>
+            </lightning-input>
+            <template if:true={contactOptions}>
+                <ul>
+                    <template for:each={contactOptions} for:item="contact">
+                        <li key={contact.Id}>
+                            <button data-id={contact.Id} onclick={handleContactSelect}>{contact.Name}</button>
+                        </li>
+                    </template>
+                </ul>
+            </template>
             <template if:true={selectedAccountName}>
                 <p>Selected Account: {selectedAccountName}</p>
                 <template if:true={contacts}>
@@ -26,6 +40,12 @@
                             </li>
                         </template>
                     </ul>
+                </template>
+            </template>
+            <template if:true={selectedContactName}>
+                <p>Selected Contact: {selectedContactName}</p>
+                <template if:true={relatedAccount}>
+                    <p>Account: {relatedAccount.Name}</p>
                 </template>
             </template>
         </div>
