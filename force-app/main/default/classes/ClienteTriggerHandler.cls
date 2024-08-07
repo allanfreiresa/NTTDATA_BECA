@@ -1,5 +1,6 @@
 public class ClienteTriggerHandler {
     // Define o Bearer Token (normalmente você obteria isso de um armazenamento seguro)
+    /*RCL: Constantes devem estar em maiúsculo para fácil identificação, além de ser 'final'*/
     public static String token = 'patsES68vUcmeLrjj.cca4e57aa1a68c7df0be28e88db3a9f7abf43a70eae48558db0b535f8e21313a';
     public static String workspaceId = 'appcdvYADPGDYd6jy';
     
@@ -57,6 +58,7 @@ public class ClienteTriggerHandler {
                 List<Cliente__c> clientesParaAtualizar = new List<Cliente__c>();
                 
                 // Procura os clientes inseridos na resposta com base no CPF
+                /* RCL: Poderia estar em um método separado, por ser outra responsabilidade */
                 for (ClienteModel.Record record : response.records) {
                     for (Id clienteId : clienteIdCpfMap.keySet()) {
                         if (clienteIdCpfMap.get(clienteId).equals(record.fields.CPF)) {
