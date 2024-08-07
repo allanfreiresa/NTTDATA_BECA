@@ -7,7 +7,7 @@ public class ClienteModel {
         public Fields fields { get; set; }
     }
 
-    /* RCL: Propriedades devem, quase sempre, iniciar em letra maiúscula */
+    /* RCL: Propriedades devem, quase sempre, iniciar em letra minúscula */
     public class Fields {
         public String Sobrenome { get; set; }
         public String Estado { get; set; }
