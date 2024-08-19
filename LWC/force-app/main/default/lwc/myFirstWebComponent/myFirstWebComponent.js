@@ -1,4 +1,4 @@
-import { LightningElement,track  } from 'lwc';//JavaScript
+import { LightningElement,track  } from 'lwc';//JavaScrip
 export default class MyFirstWebComponent extends LightningElement {
     @track
     contacts = [
