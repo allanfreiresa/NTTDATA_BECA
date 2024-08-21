@@ -3,7 +3,7 @@ public class ClienteTriggerHandler {
     public static String token = 'patsES68vUcmeLrjj.cca4e57aa1a68c7df0be28e88db3a9f7abf43a70eae48558db0b535f8e21313a';
     public static String workspaceId = 'appcdvYADPGDYd6jy';
     
-    // Método handler que prepara os dados e chama o método future
+    // Método handler que prepara os dados e chama o método future o
     public static void handleAfterInsert(List<Cliente__c> clientes) {
         // Cria um mapa de CPFs para IDs dos clientes inseridos
         Map<Id, String> clienteIdCpfMap = new Map<Id, String>();

@@ -18,7 +18,7 @@ public class ClienteModel {
         public String EstadoCivil { get; set; }
     }
 
-    // Método para fazer o parse do JSON para a classe de modelo
+    // Método para fazer o parse do JSON para a classe de modelo ok
     public static ClienteModel parse(String jsonString) {
         return (ClienteModel) JSON.deserialize(jsonString, ClienteModel.class);
     }
